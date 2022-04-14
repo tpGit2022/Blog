@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="28">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>3</ID>
+      <Description>"money"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>17896C8</Address>
+      <Offsets>
+        <Offset>178</Offset>
+        <Offset>228</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"overkill-money"</Description>
+      <LastState Value="98673" RealAddress="2F9D5B38"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>2F9D5B38</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"season1-health"</Description>
+      <LastState Value="0" RealAddress="130CEA1C"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>130CEA1C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>7</ID>
+      <Description>"season1-health-fake"</Description>
+      <LastState Value="0" RealAddress="13217120"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>13217120</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>8</ID>
+      <Description>"No description"</Description>
+      <LastState Value="1056038352" RealAddress="2B194AE0"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>2B194AE0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>9</ID>
+      <Description>"season2-health"</Description>
+      <LastState Value="3286485426" RealAddress="2B04C3DC"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>2B04C3DC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>10</ID>
+      <Description>"No description"</Description>
+      <LastState Value="8" RealAddress="133779E0"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>133779E0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>11</ID>
+      <Description>"season2-health"</Description>
+      <LastState Value="8" RealAddress="1322F2DC"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>1322F2DC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>12</ID>
+      <Description>"No description"</Description>
+      <LastState Value="1322F0D0" RealAddress="2F96FBA0"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>4 Bytes</VariableType>
+      <Address>2F96FBA0</Address>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry>
+      <Description>Code :mov [ecx+00000178],edx</Description>
+      <AddressString>HOTD_NG.exe+9E4C7</AddressString>
+      <Before>
+        <Byte>98</Byte>
+        <Byte>C2</Byte>
+        <Byte>4A</Byte>
+        <Byte>23</Byte>
+        <Byte>D0</Byte>
+      </Before>
+      <Actual>
+        <Byte>89</Byte>
+        <Byte>91</Byte>
+        <Byte>78</Byte>
+        <Byte>01</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>5D</Byte>
+        <Byte>C2</Byte>
+        <Byte>04</Byte>
+        <Byte>00</Byte>
+        <Byte>CC</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols/>
+  <Comments>Info about this table:
+</Comments>
+</CheatTable>

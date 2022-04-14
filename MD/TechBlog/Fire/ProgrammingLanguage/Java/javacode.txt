@@ -1,0 +1,302 @@
+验证码代码:
+import java.util.Random;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.util.AttributeSet;
+import android.view.View;
+
+
+public class VerifyCodeView extends View {
+
+	private int width, height, numberWidth;
+	private Paint paint;
+	private Random random;
+	private String vertifyCode = "";
+	private int textSize = 45;
+	private boolean isNeedLine = true;
+
+	private final String[] verifyNums = { "0", "1", "2", "3", "4", "5", "6",
+			"7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "G",
+			"K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W",
+			"X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+			"k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w",
+			"x", "y", "z" };
+
+	/**
+	 * 重载构造函数
+	 */
+	public VerifyCodeView(Context context) {
+		super(context);
+		init();
+	}
+
+	public VerifyCodeView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+		init();
+	}
+
+	public VerifyCodeView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		init();
+	}
+
+	public void setTextSize(int textSize) {
+		this.textSize = textSize;
+		paint.setTextSize(textSize);
+	}
+
+	public void setNeedLine(boolean isNeedLine) {
+		this.isNeedLine = isNeedLine;
+	}
+
+	/**
+	 * 在初始化的时候赋值
+	 */
+	private void init() {
+		paint = new Paint();
+		paint.setTextSize(textSize);
+		random = new Random();
+		for (int i = 0; i < 4; i++) {
+			vertifyCode += verifyNums[random.nextInt(verifyNums.length)];
+		}
+		vertifyCode.trim();
+	}
+
+	@Override
+	protected void onDraw(Canvas canvas) {
+		super.onDraw(canvas);
+		if (canvas == null)
+			return;
+
+		if (isNeedLine) {
+			// 障碍设置
+			int startX = 0, startY = 0, stopX = 0, stopY = 0;
+			for (int i = 0; i < 25; i++) {
+				startX = pointRadom(width);
+				startY = pointRadom(height);
+				stopX = pointRadom(width);
+				stopY = pointRadom(height);
+				paint.setColor(Color.rgb(random.nextInt(256),
+						random.nextInt(256), random.nextInt(256)));
+				canvas.drawLine(startX, startY - 20, stopX, stopY, paint);
+			}
+		}
+
+		for (int i = 0; i < 4; i++) {
+			randomTextStyle(paint);
+			String s = vertifyCode.substring(i, i + 1);
+			canvas.drawText(s, (numberWidth * i + numberWidth), height * 2 / 3,
+					paint);
+		}
+	}
+
+	private int pointRadom(int n) {
+		Random r = new Random();
+		return r.nextInt(n);
+	}
+
+	@Override
+	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+		super.onSizeChanged(w, h, oldw, oldh);
+		this.numberWidth = w / 6;
+		this.height = h;
+		this.width = w;
+	}
+
+	/**
+	 * 改变Paint对象的样式
+	 *
+	 * @param paint
+	 */
+	private void randomTextStyle(Paint paint) {
+		int color = Color.rgb(random.nextInt(256), random.nextInt(256),
+				random.nextInt(256));
+		paint.setColor(color);
+		paint.setFakeBoldText(random.nextBoolean()); // true为粗体，false为非粗体
+		float skewX = random.nextInt(11) / 10;
+		skewX = random.nextBoolean() ? skewX : -skewX;
+		paint.setTextSkewX(skewX); // float类型参数，负数表示右斜，整数左斜
+		// paint.setUnderlineText(random.nextBoolean()); // true为下划线，false为非下划线
+	}
+
+	/**
+	 * 获取生成的验证 并刷新当前View
+	 *
+	 * @return
+	 */
+	public String getVertifyCode() {
+		vertifyCode = "";
+		for (int i = 0; i < 4; i++) {
+			vertifyCode += verifyNums[random.nextInt(verifyNums.length)];
+		}
+		vertifyCode.trim();
+		invalidate();
+		return vertifyCode;
+	}
+
+}
+使用方法:
+代码使用方式：
+1、在布局文件中添加该控件
+2、代码中取得该id后，调用getVertifyCode（）获取验证码
+
+MD5加密解密算法 java 代码实现
+
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+public class EncryptUtil {
+
+	/**
+	 * 获取进行MD5加密，反转后的密码
+	 *
+	 * @param passWord
+	 * @return
+	 */
+	public static String reverseMD5(String password) {
+		String finalPassword = new StringBuffer("").append(MD5(password))
+				.reverse().toString();
+		return finalPassword;
+	}
+
+	/**
+	 * MD5加密
+	 *
+	 * @param originalPW
+	 *            原始密码
+	 * @return 加密之后的密码
+	 */
+	public static String MD5(String originalPW) {
+		MessageDigest md5 = null;
+		try {
+			md5 = MessageDigest.getInstance("MD5");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "";
+		}
+		char[] charArray = originalPW.toCharArray();
+		byte[] byteArray = new byte[charArray.length];
+		for (int i = 0; i < charArray.length; i++) {
+			byteArray[i] = (byte) charArray[i];
+		}
+		byte[] md5Bytes = md5.digest(byteArray);
+		StringBuffer hexValue = new StringBuffer();
+		for (int i = 0; i < md5Bytes.length; i++) {
+			int val = ((int) md5Bytes[i]) & 0xff;
+			if (val < 16) {
+				hexValue.append("0");
+			}
+			hexValue.append(Integer.toHexString(val));
+		}
+		return hexValue.toString();
+	}
+
+	/**
+	 * 加密算法
+	 *
+	 * @throws UnsupportedEncodingException
+	 *
+	 * @return加密后字符串
+	 */
+	public static String EncryptCode(String userID, String str) {
+		byte[] idByte = null;
+		idByte = MD5(userID).getBytes();
+		byte S_key = idByte[idByte.length - 1];// 密钥
+		byte[] value;
+		try {
+			value = str.getBytes("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			value = str.getBytes();
+		}
+		int[] valueXOR = new int[value.length];// 异或之后的字符串
+		StringBuffer result = new StringBuffer("");// 结果字符串
+		for (int i = 0; i < value.length; i++) {
+			// value[i]与S_key异或运算
+			// Log.i("加密", "异或之后 " + (value[i] ^ S_key));
+			valueXOR[i] = (value[i] ^ S_key);
+			if (valueXOR[i] < 0) {
+				valueXOR[i] += 256;
+			}
+			result.append(String.format("%03d", valueXOR[i]));// 左侧补充0
+		}
+		String finalResult = result.reverse().toString();
+		return finalResult;
+	}
+
+	/**
+	 * 解密算法
+	 *
+	 * @param userID用户ID
+	 * @param EncryptInfo密文
+	 * @throws UnsupportedEncodingException
+	 * @return原文
+	 */
+	public static String DecryptCode(String userID, String EncryptInfo) {
+		byte[] idByte = MD5(userID).getBytes();// android默认utf-8格式，一个中文字符占用3个字符
+		byte S_key = idByte[idByte.length - 1];// 密钥
+		String S_source = new StringBuffer("").append(EncryptInfo).reverse()
+				.toString();
+		byte[] value = new byte[S_source.length() / 3];// 构造value数组
+
+		int temp;
+		for (int i = 0, k = 0; i < S_source.length(); i += 3, k++) {
+			temp = Integer.parseInt(S_source.substring(i, i + 3));
+			value[k] = (byte) (temp ^ S_key);
+		}
+		String result;
+		try {
+			result = new String(value, "utf-8");
+		} catch (UnsupportedEncodingException e) {
+			result = new String(value);
+		}
+		return result;
+	}
+
+}
+
+用户名密码格式验证代码
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.util.regex.Pattern;
+public class StringUtil {
+
+	/**
+	 * 正则表达式检测账号 长度为1-30位，只能由字母、数字、下划线组成
+	 *
+	 * @return true为验证成功呢，false为验证失败
+	 */
+	public static boolean checkUserAccount(String str) {
+		boolean success = false;
+		String regEx = "^([0-9_a-zA-Z]){1,30}$";
+		success = Pattern.matches(regEx, str);
+		return success;
+	}
+
+	/**
+	 * 正则表达式检测userPwd 长度为1-20位，由字母、数字、特殊字符组成
+	 *
+	 * @return true为验证成功呢，false为验证失败
+	 */
+	public static boolean checkUserPwd(String str) {
+		boolean success = false;
+		// 正则表达式需要假如反斜杠，需要4条杠
+		String regEx = "^[a-zA-Z0-9`~!@#$%^&*()_+-={}|\";'<>?,./\\[\\]\\\\]{1,20}$";
+		success = Pattern.matches(regEx, str);
+		return success;
+	}
+	/**
+	 * 解码
+	 * @param str
+	 * @return
+	 */
+	public static String decode(String str) {
+		try {
+			return URLDecoder.decode(str, "utf-8");
+		} catch (UnsupportedEncodingException e) {
+			return str;
+		}
+
+	}
+
+}

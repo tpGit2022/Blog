@@ -1,0 +1,55 @@
+# 临时
+自定义View中经常复写的方法onMeasure,OnDraw,OnSizeChange,OnTouchEvent,onLayout,onKeyDown,onKeyUp,OnTrackballEvent,onFocusChanged,onWindowFocusChanged,onAttachedToWindow,onDetachedFromWindow,onWindowVisibilityChanged
+https://www.diycode.cc/topics/81
+
+1.常用开源库
+2.设计模式
+3.常见算法
+4.经典源码
+5.常见常用知识点
+6.常见的坑和优化思路
+7.
+
+知识点
+1.Handler，Looper，MessageQueue的源码分析
+2.Android的View体系
+3.Android的View事件
+4.App的整体启动流程
+5.ButterKnife的源码分析
+6.Volley的源码分析
+7.Activity的源码分析
+8.Services源码解析
+9.Intent源码解析
+10.SVG矢量图的运用
+11.贝塞尔曲线的绘制
+12.Android中的动画
+13.Path类的用法 Rect 相关知识点。
+14.自定义View
+15.BroadCastReceiver的使用
+16.FileProvider的使用
+17.Android 6.0权限申请
+18.style文件编写整理说明整理
+19.attr文件编写说明整理
+20.Android Studio的模板 Live Template
+21.枚举的使用场景
+22.ListView源码解析，以及ListView常用或者常见的使用模式（分组的，带标题的，布局代图片的。）
+23.Android中的Uri
+24.Fragment的正确使用方式。
+25. ScheduledExecutorService 
+26. ImageLoader工具类
+27. 截屏工具类ScreenCapUtils
+
+
+个人军火库
+1.  常见算法加密类实现（可不了解具体的实现）
+2.  基于Gson的解析框架
+3.  文件下载辅助类
+4.  日期格式处理类
+5.  图片下载处理类
+6.  状态栏沉浸处理类
+7.  常用正则string类
+8.  Toast封装类
+9.  汉字转拼音工具类
+10. 文件复制操作类
+11. 完整的网络请求框架(1.WebAPi的访问，http和https以及自建证书的使用，2.图片的加载，3.文件的上传下载，大文件的上传下载)
+12. 崩溃日志收集整理框架。

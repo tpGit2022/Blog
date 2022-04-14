@@ -1,0 +1,5 @@
+View的事件分发机制dispatchTouchEvent，OnInterceptTouchEvent,OnTouchEvent。
+
+dispatchTouchEvent:分发事件
+OnInterceptTouchEvrent:拦截事件
+OnTouchEvent:消费事件。

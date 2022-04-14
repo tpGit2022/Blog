@@ -1,0 +1,3 @@
+插件安装file-settings-plugins-Browse repositories-搜索要安装的插件-install,安装成功后重启Intellij Ideas。
+1. GsonFormat
+2. WakaTime。一般重启后悔自动弹出输入appkey的窗口，如果没有主动弹出可以在Tools-wakatime setting找到设置好appkey，如果Tools没有该选项建议重启Idea

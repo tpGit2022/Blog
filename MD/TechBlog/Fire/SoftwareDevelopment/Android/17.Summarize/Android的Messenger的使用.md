@@ -1,0 +1,1 @@
+Messenger位于`android.os`包下，注意是`Messenger`要和`Messager`区分开发。该类是final类且实现了`Parcelable`接口。

@@ -1,0 +1,54 @@
+1. 查看Cygwin版本
+`cygcheck -c cygwin`
+2. 查看gcc版本
+`gcc --version`
+查看 g++，make，gdb同理。
+
+```
+autoconf2.1、automake1.10、binutils、gcc-core、gcc-g++、gcc4-core、gcc4-g++、gdb、pcre、pcre-devel、gawk、make共12个包
+
+binutils，gcc，make。
+```
+
+3. 设置环境变量
+* 需求：需要把存放shell脚本的目录放置环境变量PATH，让脚本命令可以快速得到执行而不需要多次切换命令
+* 思路：Linux下一切皆文件，环境变量依赖`profile`的文件，需要所有用户生效修改`/etc/profile`文件，如果只需要当前用户生效修改用户目录下的`~/.bash_profile`文件，这里因为是Cygwin模拟环境采用后者。
+* 根据` ~/.bash_profile`文件中注释的提示，追加自己的shell脚本目录。
+```
+LiunxEnv="/cygdrive/e/MyScript/Liunx/"
+if [ -d "${LiunxEnv}" ] ; then
+  PATH="${LiunxEnv}:${PATH}"
+fi
+```
+
+为了让配置及时生效，终端中执行`source ~/.bash_profile`。之后再Cygwin终端里面可以运行xxx.sh命令，直接执行自己shell脚本目录下的xxx.sh脚本文件了。
+
+> 注意LiunxEnv变量的定义前后不要有空格，同时注意路径的描述。之后引用的变量${LiunxEnv}为PATH追加新值
+
+  之后执行写好的脚本命令可以通过 `bash shell.sh` 或者 `sh shell.sh`。
+
+4. 添加ssh，curl，wget功能
+  为了方便登录远程的Linux主机需要ssh功能，于是打开cygwin的安装器，输入openssh，
+点击一下变成选中install状态，之后下一步安装即可
+
+ curl和wget的安装类似。
+
+5. ssh登录远程主机
+  查看用法得到如下结果
+  ```
+  usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]
+           [-b bind_address] [-c cipher_spec] [-D [bind_address:]port]
+           [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]
+           [-i identity_file] [-J [user@]host[:port]] [-L address]
+           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
+           [-Q query_option] [-R address] [-S ctl_path] [-W host:port]
+           [-w local_tun[:remote_tun]] destination [command]
+  ```
+
+ 使用实例 `ssh root@176.122.170.156 -p 27948`, -p 后面接端口号，@左侧的root代表用户@右侧代表主机的ip地址
+
+ 6. cygwin执行shell脚本时的$'\r'问题
+  由于Linux和Windows的回车换行符号的表示并不一样，需要经过dos2unix处理回车换行
+符，执行 dos2unix filename 即可。
+
+> dos2unix 不是自带命令需要通过cygwin的安装器自己安装

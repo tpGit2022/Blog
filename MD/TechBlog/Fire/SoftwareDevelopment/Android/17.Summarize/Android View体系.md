@@ -1,0 +1,1 @@
+Android View的视图竖屏状态下以左上角为原点，当Activity调用 `setRequestedOrientation` 方法设置Activity的方向，Activity的X和Y轴会跟随变化，Activity的横竖屏基本就是绕着屏幕中心发生旋转，除了中心的点的位置(非坐标值)，其他的View的位置和X，Y轴一起跟着旋转。

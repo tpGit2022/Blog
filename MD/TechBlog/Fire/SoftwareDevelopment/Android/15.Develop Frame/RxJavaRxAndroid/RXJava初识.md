@@ -1,0 +1,2 @@
+Observable(被观察者)，observer(观察者),subscribe(订阅)，events(事件)。
+Scheduler的subscribeOn()和observeOn()两个方法对线程进行控制，\*subscribeOn指定subscribe()所发生的线程，即Observable.OnSubscribe被激活所在的线程或者叫做事件产生的线程，\*Observeon()指定Subscriber所运行在的线程。即事件消费的线程。
