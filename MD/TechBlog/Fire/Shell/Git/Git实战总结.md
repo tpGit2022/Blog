@@ -536,3 +536,9 @@ cd /d "C:\Program Files\Git"
 ```
 
 https://superuser.com/questions/1104567/how-can-i-find-out-the-command-line-options-for-git-bash-exe
+
+
+
+#　参考资料
+
+https://github.com/git/git/commit/ac6b03cb4197311b055dc5f46ab10bf37c591ae6
