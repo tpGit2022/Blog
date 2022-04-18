@@ -45,7 +45,7 @@ Accessibility Focus完全不同于Input Focus
 | android:settingsActivity | 用于设置AccessibilityServices的界面。
 
 需要重点掌握的几个类。
-![20170105210827.png](../../../../../Pictures\20170105\20170105210827.png)  
+![20170105210827.png](../../../../../Pictures/201701/20170105210827.png)  
 通过`startService(intent)`虽然可以启动辅助服务，能看见辅助服务的`OnCreate`,`OnStartCommand` 方法被执行。但`onAccessibilityEvent`以及`onInterrupt`并不会被执行，只有手动开启了辅助服务功能之后`onAccessibilityEvent`以及`onInterrupt`才会被正常的回调，执行处理逻辑。
 
 # 参考资料

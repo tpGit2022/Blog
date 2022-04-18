@@ -2,10 +2,10 @@
 
   Gradle 中的 Jar 任务是 Java插件新增的Task，可以直接执行 `gradle jar` 
 执行打包Jar，执行的结果如下图:  
-![20190421194533.png](E:\MyBlogs\MD\TechBlog\Pictures\20190421\20190421194533.png)  
+![20190421194533.png](../../../Pictures/201904/20190421194533.png)  
 
   libs 目录下的jar文件执行失败提示未配置属性。  
-![20190421194627.png](E:\MyBlogs\MD\TechBlog\Pictures\20190421\20190421194627.png)  
+![20190421194627.png](../../../Pictures/201904/20190421194627.png)  
 
   在build.gradle中添加如下代码：
   ```

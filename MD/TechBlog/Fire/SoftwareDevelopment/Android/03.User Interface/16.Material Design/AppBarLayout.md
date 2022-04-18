@@ -6,7 +6,7 @@ AppBarLayout 是 Material Desgin 中用于实现折叠效果的控件之一，�
 AppBarLayout 是垂直方向的线性布局实现，
 
 
-![20200721182924.png](E:\MyIT\MyBlogs\TechBlog\Pictures\20200721\20200721182924.png)  
+![20200721182924.png](../../../../../Pictures/202007/20200721182924.png)  
 
 AppBarLayout 需要作为 CoordinatorLayout 的直接子View方可正常实现功能。一段常见的 AppBarLayout 布局代码如下：
 
@@ -84,32 +84,32 @@ nsv 称之为 appbar 的 scrollview(滚动视图)， AppBarLayout 要实现的�
 
 `noScroll`：不滑动。即 scrollview 滑动是 appbar 无变化
 
-![20200722103720.png](E:\MyIT\MyBlogs\TechBlog\Pictures\20200722\noscroll.gif)
+![20200722103720.png](../../../../../Pictures/noscroll.gif)
 
 `scroll`: 滑动，appbar 成为 scrollview 的一部分，跟随滑动
 
-![20200722103720.png](E:\MyIT\MyBlogs\TechBlog\Pictures\20200722\scroll.gif)
+![20200722103720.png](../../../../../Pictures/scroll.gif)
 
 `exitUntilCollapsed`: 和 scroll 联用，下拉和scroll一致，上拉时先滑动appbar内容到最小高度固定在顶端不再滑动，之后滑动scrollview的内容
 
-![20200722103720.png](E:\MyIT\MyBlogs\TechBlog\Pictures\20200722\exitcoll.gif)
+![20200722103720.png](../../../../../Pictures/exitcoll.gif)
 
 `enterAlways`: 和 scroll 联用，上拉和scroll表现一致，下拉时先滑动appbar再滑动scrollview
 
-![20200722103720.png](E:\MyIT\MyBlogs\TechBlog\Pictures\20200722\enteralways.gif)
+![20200722103720.png](../../../../../Pictures/enteralways.gif)
 
 `enterAlwaysCollapsed`: enterAlways的附加属性，上拉和scroll表现一致，下拉时先appbar的childview的最小高度(如果存在)再滑动scrollview最后再滑动appbar的内容
 
-![20200722103720.png](E:\MyIT\MyBlogs\TechBlog\Pictures\20200722\app_s_e_c.gif)
+![20200722103720.png](../../../../../Pictures/app_s_e_c.gif)
 
 
 `snap`: 和 scroll 联用，作用是当appbar只滑动了一部分的时候会自动滑动到最近的边界，效果如下图：
 
-![20200722103720.png](E:\MyIT\MyBlogs\TechBlog\Pictures\20200722\snap.gif)
+![20200722103720.png](../../../../../Pictures/snap.gif)
 
 `snapMargins`: `snap` 的 附加属性，snap默认是滑动到appbar的childview的边界，如果需要滑动到childview的margintop和marginbottom则需要加上该属性，其实就是是否滑动到appbar的边界
 
-![20200722103720.png](E:\MyIT\MyBlogs\TechBlog\Pictures\20200722\snapmargin.gif)
+![20200722103720.png](../../../../../Pictures/snapmargin.gif)
 
 
 ```

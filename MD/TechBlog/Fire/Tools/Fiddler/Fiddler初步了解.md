@@ -3,12 +3,12 @@
 
 * 设置系统代理  
 在网络设置-连接中找到  
-![20190907152824.png](E:\MyBlogs\MD\TechBlog\Pictures\20190907\20190907152824.png)  
+![20190907152824.png](../../../Pictures/201909/20190907152824.png)  
 填写代理地址
 
 * Fiddler设置gateway  
 上一种方式比较通用，这样电脑的所有数据都会走代理，如果不想让所有的流量都走代理只想把Fiddler的流量走代理可以通过tools-options-gateway，填写代理地址。  
-![20190907153125.png](E:\MyBlogs\MD\TechBlog\Pictures\20190907\20190907153125.png)  
+![20190907153125.png](../../../Pictures/201909/20190907153125.png)  
 
 最后点击 `show gateway info dialog` 看下是否正确。
 

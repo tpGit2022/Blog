@@ -16,7 +16,7 @@ RAW8:  8bit表示一个像素点
 RAW10：10bit表示一个像素点，实际中需要用到 2byte也就是16bit，所以高6位无用  
 RAW12：12bit表示一个像素点，实际中也需要 2byte来表示 所以高4位无用
 
-![RAW8和RAW10的Hex比较](../Images/2022_03_15/RAW8和RAW10的比较.png)
+![RAW8和RAW10的Hex比较](../Pictures/RAW8和RAW10的比较.png)
 
 上图是同一张图 RAW8 和 RAW10 格式的 Hex 值对比，根据RAW图的定义 `41 00` 和 `10` 其实代表的同一个像素点
 
@@ -104,7 +104,7 @@ public void convertRaw10TRaw8(File source) {
 光线经过CFA过滤后被Sensor的感应到，此时Sensor输出的RAW图只是数组，数组中的数据实际描述的光照的强度，要想得到符合人眼看到的彩色图片，需要进行插值, 也就是从原始的数组得到R,G,B三个数组，数据量在原来的三倍
 
 
-![RAW图插值](..\Images\2022_03\RAW图插值.png)
+![RAW图插值](../Pictures/RAW图插值.png)
 
 
 # 图片格式

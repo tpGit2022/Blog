@@ -94,6 +94,7 @@ ext {
 ```
 
 同时项目级别的`build.gradle`中添加`config.gradle`的引用，同步下gradle让其对所有子模块生效
+
 ```
 apply from: 'config.gradle'
 ```
@@ -137,3 +138,76 @@ android {
 ```
 
 这样就可以通过环境变量中配置的签名文件参数进行apk的release发布。
+
+
+# 附录
+
+
+```groovy
+/**
+ *  deps.gradle 同一管理依赖库
+ *  项目的 build.gradle 添加 `apply from: 'deps.gradle'` 引用该文件
+ *  同时将原来的 `repositories {....}` 节点 替换为 `addRepos(repositories)`
+ */
+// add resp remote url
+def addRepos(RepositoryHandler handler) {
+    // add aliyun resp url to build fast
+    handler.maven{ url 'https://maven.aliyun.com/nexus/content/groups/public/'}
+    handler.maven { url 'https://maven.aliyun.com/repository/google' }
+    handler.maven{ url 'https://maven.aliyun.com/repository/jcenter'}
+    handler.maven { url 'https://maven.aliyun.com/repository/central' }
+    handler.maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+    // origin resp remote url
+    handler.maven { url 'https://jitpack.io' }
+    handler.google()
+    handler.mavenLocal()
+    handler.mavenCentral()
+    handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    //handler.jcenter()  jcenter自2021.02.28开始停止维护
+}
+ext.addRepos = this.&addRepos
+
+def deps = [:]
+
+def android_sdk = [:]
+android_sdk.minSdkVersion =  21
+android_sdk.targetSdkVersion = 29
+android_sdk.compileSdkVersion = 29
+android_sdk.buildToolsVersion = "29.0.3"
+
+ext.android_sdk = android_sdk
+
+def androidx = [:]
+// room
+androidx.room = "androidx.room:room-runtime:2.2.5"
+androidx.room_apt = "androidx.room:room-compiler:2.2.5"
+androidx.room_ktx = "androidx.room:room-ktx:2.2.5"
+androidx.room_rxjava2 = "androidx.room:room-rxjava2:2.2.5"
+androidx.room_test_helper = "androidx.room:room-testing:2.2.5"
+// live data
+
+androidx.viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+androidx.livedata = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+// lifecycle without ViewModel or LiveData
+androidx.lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+androidx.lifecycle_apt = "androidx.lifecycle:lifecycle-compiler:2.2.0"
+
+androidx.recyclerview = "androidx.recyclerview:recyclerview:1.1.0"
+androidx.cardview = "androidx.cardview:cardview:1.0.0"
+androidx.viewpager2 = "androidx.viewpager2:viewpager2:1.0.0"
+androidx.material = "com.google.android.material:material:1.2.1"
+deps.androidx = androidx
+
+def common_deps = []
+
+ext.common_deps = common_deps
+
+def android_deps = []
+ext.common_deps = android_deps
+
+
+def java_deps = []
+ext.common_deps = java_deps
+
+ext.deps = deps
+```

@@ -8,7 +8,7 @@ RxPermissions用于解决Android6.0之后新增的动态授权问题，实现一
 4. `boolean shouldShowRequestPermissionRationale(String permission)`:用于判断上一次授权时是否勾选了不再提醒，
 
 一个正常完成的授权流程如下图：
-![20180109105022.png](../../../../../Pictures\20180109\20180109105022.png)  
+![20180109105022.png](../../../../../Pictures/201801/20180109105022.png)  
 
 > 
 

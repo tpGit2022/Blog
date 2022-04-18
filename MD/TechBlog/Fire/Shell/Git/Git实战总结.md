@@ -35,7 +35,7 @@ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch Fire/
 ```
 
 `Fire/Basic/account.md`是要移除的文件路径  
-![20171206192612.png](../../../Pictures\20171206\20171206192612.png)
+![20171206192612.png](../../../Pictures/201712/20171206192612.png)
 
 2. 强行推送至服务器
 
@@ -43,7 +43,7 @@ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch Fire/
 git push origin master --force
 ```
   
-![20171206192705.png](../../../Pictures\20171206\20171206192705.png)  
+![20171206192705.png](../../../Pictures/201712/20171206192705.png)  
 
 3. 清除回收空间
     1. `rm -rf .git/refs/original/`
@@ -51,7 +51,7 @@ git push origin master --force
     3. `git gc --prune=now`
     4. `git gc --aggressive --prune=now`
 
-![20171206193235.png](../../../Pictures\20171206\20171206193235.png)
+![20171206193235.png](../../../Pictures/201712/20171206193235.png)
 
 4. 参考链接
     1. [Git如何永久删除文件(包括历史记录)](https://www.cnblogs.com/shines77/p/3460274.html)
@@ -113,10 +113,10 @@ ssh-keygen -f filename  -t rsa -C "youremailaddress"
 3. 测试配置是否正常
 
 `ssh -T git@github.com` 测试主账号是否连接正常  
-![20171209135637.png](../../../Pictures\20171209\20171209135637.png)
+![20171209135637.png](../../../Pictures/201712/20171209135637.png)
 
 `ssh -T git@linux.github.com`  
-![20171209135748.png](../../../Pictures\20171209\20171209135748.png)
+![20171209135748.png](../../../Pictures/201712/20171209135748.png)
 
 4. 后期使用
 当需要使用第二账号克隆仓库是使用如下命令
@@ -503,7 +503,7 @@ git rm --cached filepath        //只移除工作区，不删除文件
 git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch filename' --prune-empty --tag-name-filter cat
 ```
 
-![20190820171914.png](E:\MyBlogs\MD\TechBlog\Pictures\20190820\20190820171914.png)  
+![20190820171914.png](../../../Pictures/201908/20190820171914.png)  
 
 如果需要复写所有分支，一般直接加上 `--all` 参数，但这里根据文档需要 `-- --all` 才行。
 
@@ -511,7 +511,7 @@ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch filen
 git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch filename' --prune-empty --tag-name-filter cat -- --all
 ```
 
-![20190820172110.png](E:\MyBlogs\MD\TechBlog\Pictures\20190820\20190820172110.png)  
+![20190820172110.png](../../../Pictures/201908/20190820172110.png)  
 
 然后将相关文件(夹)加入 `.gitignore` 文件中，最后回收一下本地的空间
 

@@ -1,5 +1,5 @@
 ### Android Studio和Eclipse的目录结构很不一致。
-![20170108115850.png](../../../Pictures\20170108\20170108115850.png)
+![20170108115850.png](../../../Pictures/201701/20170108115850.png)
 
 ### Android Studio 设置某个特定模块使用代理设置
 在该模块的build.gradle文件中设置代理

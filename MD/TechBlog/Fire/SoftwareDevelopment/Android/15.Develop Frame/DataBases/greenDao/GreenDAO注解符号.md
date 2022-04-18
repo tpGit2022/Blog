@@ -53,7 +53,7 @@ public class StudentMsgBean {
 ```
 
 创建好实体类后Rebuild project一下，  
-![20170601153026.png](../../../../../../Pictures\20170601\20170601153026.png)  
+![20170601153026.png](../../../../../../Pictures/201706/20170601153026.png)  
 
 * DAOMaster：
     * 是GreenDao的入口也是greenDao顶级对象,对于一个指定的表单持有数据库对象（SQLite数据库）并且能够管理DAO类- 能够创建表和删除表 
@@ -80,7 +80,7 @@ public class StudentMsgBean {
 | @Generated | 提示开发者该属性不能被修改；并且实体类的方法，属性，构造器一旦被@Generated注释就不能被再次修改，否则或报错 |
 
 GreenDAO的所有注解符号如下：在greendao-api-3.2.2.jar中可以清晰看见。　　　　
-![20170601175333.png](../../../../../../Pictures\20170601\20170601175333.png)　　
+![20170601175333.png](../../../../../../Pictures/201706/20170601175333.png)　　
 
 |　注解符号 |　功能  |
 |:--:|:--:|  

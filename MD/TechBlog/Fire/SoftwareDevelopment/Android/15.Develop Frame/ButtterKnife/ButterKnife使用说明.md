@@ -6,7 +6,7 @@
 
 # 准备工作
 为了叙述方便，整个工程称之为项目，主Module称之为app。其他module统称为库(Library)。  
-![20170524151246.png](../../../../../Pictures\20170524\20170524151246.png)  
+![20170524151246.png](../../../../../Pictures/201705/20170524151246.png)  
 如上图，工程的build.gradle指最下方的build.gradle，app的build.gradle指图中最上层的build.gradle,中间的Build.gradle成为库的build.gradle.本说明基于Butter Knife8.6.0版本进行说明。不同版本间存在差异，具体使用说明以官方文档为准。
 
 # 引入
@@ -128,7 +128,7 @@ public class SecondActivity extends AppCompatActivity {
 **`@BindViews`的`apply`方法的应用**  
 通过apply方法方便我们在View的List统一执行操作如完成全选状态或者全不选状态。
 ButterKnife有12个apply重构方法。  
-![20170524211338.png](../../../../../Pictures\20170524\20170524211338.png)  
+![20170524211338.png](../../../../../Pictures/201705/20170524211338.png)  
 
 接受`Action`,`Setter`,`Property`作为参数。
 ***Action***  
@@ -172,7 +172,7 @@ ButterKnife有12个apply重构方法。
 
 ***Property***  
 来至android.util包抽象类,根据需要统一设定属性  
-![20170524214713.png](../../../../../Pictures\20170524\20170524214713.png)  
+![20170524214713.png](../../../../../Pictures/201705/20170524214713.png)  
 
 设定CheckBox的透明度。
 ```
@@ -181,7 +181,7 @@ ButterKnife有12个apply重构方法。
 
 ## 资源绑定
   资源的绑定注解符号有9个。从`butterknife-annotation-8.6.0.jar`包中可以清晰的看到。  
-  ![20170524164629.png](../../../../../Pictures\20170524\20170524164629.png)  
+  ![20170524164629.png](../../../../../Pictures/201705/20170524164629.png)  
 
 
   | 注解符号 | 功能 | 
@@ -277,11 +277,11 @@ ButterKnife有12个apply重构方法。
 # 总结
 
 1. ButterKnife的bind()有六个重构的方法,返回一个Unbinder对象用于解绑。
-![20170524175534.png](../../../../../Pictures\20170524\20170524175534.png)  
+![20170524175534.png](../../../../../Pictures/201705/20170524175534.png)  
 利用bind的其他方法，很容易为Fragment，View Holder，Dialog等使用Butter Knife绑定视图。
 
 ButterKnife类的结构图如下：  
-![20170524175837.png](../../../../../Pictures\20170524\20170524175837.png)  
+![20170524175837.png](../../../../../Pictures/201705/20170524175837.png)  
 
 2. 调用Unbinder对象的unbind()方法进行解绑操作
 3. 可以通过ButterKnife.findById来代替以前的findViewById方法。

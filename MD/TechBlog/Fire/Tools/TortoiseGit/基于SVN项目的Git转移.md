@@ -34,11 +34,13 @@ echo 'script is done,all work complete'
 
 返回上一级目录`F:\gitgit`,选中`Authentication`右键先add 再commit master，完成本地仓库的提交。同样右键`Authentication`,TortoiseGit-Settings-Git-Remote.URL一栏填入远程仓库地址`ssh://tyw@192.168.41.202:29418/Android/GitTest.git`，点击应用，建立本地仓库和远程仓库的连接。接下来开始同步代码。
 先拉取重建
-![20170803093028.png](../../../Pictures\20170803\20170803093028.png)  
+![20170803093028.png](../../../Pictures/201708/20170803093028.png)  
+
+![20170803093028.png](../../../Pictures/201708/20170803093028.png)  
 再进行push操作，推送本地代码至git服务器。
 
 # 第二步  
 
 先由一人提交代码至git服务器。其他人同样是先建立本地仓库-排除svn目录-本地add和commit-关联远程仓库。最后只在Fetch & Rebase时可能出现冲突，  
-![20170803093623.png](../../../Pictures\20170803\20170803093623.png)  
+![20170803093623.png](../../../Pictures/201708/20170803093623.png)  
 ，手动解决完冲突后，点击commit。之后便是正常的git的pull，push操作了 。

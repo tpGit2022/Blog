@@ -5,13 +5,13 @@
 
   为了避免更多编码问题的发生，先修改AndroidStudio(和IntellijIdea一样)默认编码格
 式为UTF-8，File-Settings-Editor-FileEncodings,将GlobalEncoding和ProjectEncoding等全部修改为UTF-8编码，如下图所示:  
-![20190812101721.png](E:\MyBlogs\MD\TechBlog\Pictures\20190812\20190812101721.png)  
+![20190812101721.png](../../../../Pictures/201908/20190812101721.png)  
 
   Gradle 编译项目，如果依旧出现 `错误: 编码GBK的不可映射字符` 的错误提示，先检
 查相应文件当前格式是否是UTF-8，不是就通过右下方转化为UTF-8，如果是UTF-8依旧有这样的提示，则代表Gradle的编译环境需要设置编码格式, 只需要保证编译时使用UTF-8即可  
 1. 设置Gradle全局的编译编码为UTF-8  
 新增环境变量 `GRADLE_OPTS = -Dfile.encoding=UTF-8`  
-![20190812103548.png](E:\MyBlogs\MD\TechBlog\Pictures\20190812\20190812103548.png)  
+![20190812103548.png](../../../../Pictures/201908/20190812103548.png)  
 
 这样所有的Gradle项目默认以UTF-8作为编译编码格式。
 
@@ -20,7 +20,7 @@
 > 注意该编译参数临时有效
 
 3 . AndroidStudio设置编译编码格式  
-![20190812104340.png](E:\MyBlogs\MD\TechBlog\Pictures\20190812\20190812104340.png)  
+![20190812104340.png](../../../../Pictures/201908/20190812104340.png)  
 
 > 该编译参数只对AndroidStudio运行的gradle build task 有效，直接终端执行gradle build 不包含该参数
 

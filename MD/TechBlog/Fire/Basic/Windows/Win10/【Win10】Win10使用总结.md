@@ -266,7 +266,7 @@ Total station unzip code:www.macxin.com
 # 强制窗口化程序  
 
 在应用启动的快捷方式上加入 `-win -xres xxxx -yres xxxx` 指令。  
-![20190915160418.png](E:\MyBlogs\MD\TechBlog\Pictures\20190915\20190915160418.png)  
+![20190915160418.png](../../../../Pictures/201909/20190915160418.png)  
 
 
 # 自定义 Chrome 的用户数据目录

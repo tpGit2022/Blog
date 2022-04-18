@@ -13,7 +13,7 @@ Model-View-Presenter。MVP模式中包含3个基本要素
 2. 对View的渲染均放在了Prsenter中，View和Presenter交互频繁。
 
 Demo中的代码结构：  
-![20170525202057.png](../../../../Pictures\20170525\20170525202057.png)  
+![20170525202057.png](../../../../Pictures/201705/20170525202057.png)  
 
 Demo模拟的功能：点击按钮-获取数据-展示数据。
 

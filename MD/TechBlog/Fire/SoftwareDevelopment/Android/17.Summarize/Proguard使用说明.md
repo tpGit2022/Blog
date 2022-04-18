@@ -4,7 +4,7 @@ Proguard 是一项工具，首先代码混淆(Code Obfuscation)只是它的功�
 ***Proguard是一个压缩(Shrink)，优化(Optimize)，混淆(Obfuscation)Java字节码的工具***  
 其执行过程也是Shrink-Optimize-Obfuscation，大流程如下图：  
 
-![summary](../../../../Pictures\20180116\20180425101220.png)
+![summary](../../../../Pictures/201804/20180425101220.png)
 
 Shrink:主要检查并剔除没有使用的类，字段，方法和属性
 Optimize:分析优化方法的二进制码
@@ -85,7 +85,7 @@ allowobfuscation
 
 ***class_specification***  
 
-![class_specification](../../../../Pictures\20180116\20180419170834.png)
+![class_specification](../../../../Pictures/201804/20180419170834.png)
 
 常见的几种用法。
 1. 保留某个类所有变量和方法 `-keep class com.xxx.xxx.classname {*;}`
@@ -104,10 +104,10 @@ allowobfuscation
 
 
 各个`keep`关键字的联系和区别：
-![keep connect and difference](E:\MyBlogs\TechBlog\Pictures\20180116\20180424100436.png)
+![keep connect and difference](../../../../Pictures/201804/20180424100436.png)
 
 
-![modify](../../../../Pictures\20180116\20180424100758.png)
+![modify](../../../../Pictures/201804/20180424100758.png)
 
 
 ```

@@ -124,11 +124,11 @@ atom.exe
 * 右键添加菜单需要修改注册表  
 在 `\HKEY_CLASSES_ROOT\Directory\Background\shell` 新增项 cygwin
 
-![20190929120455.png](E:\MyBlogs\MD\TechBlog\Pictures\20190929\20190929120455.png)  
+![20190929120455.png](../../../Pictures/201909/20190929120455.png)  
 
 cygwin 下新建项 `command`, 设置数据为启动 cygwin 的脚本所在的位置
 
-![20190929120812.png](E:\MyBlogs\MD\TechBlog\Pictures\20190929\20190929120812.png)  
+![20190929120812.png](../../../Pictures/201909/20190929120812.png)  
 
 实现的注册表脚本 cygwin.reg 如下：
 
@@ -165,7 +165,7 @@ mintty.exe -i /Cygwin-Terminal.ico - | taskkill /f /im cmd.exe
 在 `.bash_profile` 最后一行添加 `cd "${script_exec_path}"`
 
 最终的效果如下：  
-![20190929121552.png](E:\MyBlogs\MD\TechBlog\Pictures\20190929\20190929121552.png)  
+![20190929121552.png](../../../Pictures/201909/20190929121552.png)  
 
 * 琐碎  
 

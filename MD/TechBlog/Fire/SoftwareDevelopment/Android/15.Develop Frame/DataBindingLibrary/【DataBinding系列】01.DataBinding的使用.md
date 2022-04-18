@@ -19,7 +19,7 @@ android{
 
 新增的 library
 
-![20200112154418.png](E:\MyBlogs\MD\TechBlog\Pictures\20200112\20200112154418.png)
+![20200112154418.png](../../../../../Pictures/202001/20200112154418.png)
 
 
 

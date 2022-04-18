@@ -5,13 +5,13 @@
  `jarsigner -verbose -keystore abc.keystore -signedjar 123x.apk 123.apk abc.keystore`
  2. 查看keystore的信息  
  `keytool -list -keystore xxx.keystore`  
- ![20170117145115.png](../../../../Pictures\20170117\20170117145115.png)
+ ![20170117145115.png](../../../../Pictures/201701/20170117145115.png)
  3. 查看证书文件信息  
   `keytool -printcert -file CERT.RSA`  
-  ![20170117151921.png](../../../../Pictures\20170117\20170117151921.png)
+  ![20170117151921.png](../../../../Pictures/201701/20170117151921.png)
  4. 验证apk是否已签名  
   `jarsinger -verify xxx.apk`  
-  ![20170117151006.png](../../../../Pictures\20170117\20170117151006.png)
+  ![20170117151006.png](../../../../Pictures/201701/20170117151006.png)
 
 查看keystore文件的详细信息
 `keytool -v -list -keystore debug.keystore`

@@ -26,7 +26,7 @@ File-Settings-Editor-General-Auto Import
 # 设置默认编码格式
 File-Settings-Editor-File Encodings 
 
-![20190513113542.png](E:\MyBlogs\MD\TechBlog\Pictures\20190513\20190513113542.png)  
+![20190513113542.png](../../../Pictures/201905/20190513113542.png)  
 
 
 ## 参考资料
@@ -38,7 +38,7 @@ File-Settings-Editor-File Encodings
 Gradle指的Android Studio安装目录下`xxxx\Android Studio\gradle`
 Gradle插件指的Android Studio安装目录下的`xxx:\Android Studio\gradle\m2repository\com\android\tools\build\gradle`的具体文件
 两者之间存在一定的对应关系，  
-![20171221151517.png](../../../Pictures\20171221\20171221151517.png)  
+![20171221151517.png](../../../Pictures/201712/20171221151517.png)  
 另外的还有Gradle编译时用到的缓存仓库
 `GRADLE_HOME`和`GRADLE_USER_HOME`这两个环境变量，当没有设置这两个环境变量是Gradle编译项目是默认会在当前用户的目录`%userprofile%`,比如说`C:\Users\Administrator`下面创建隐藏文件夹`.gradle`，所有的依赖将会下载到这里。
 ## 参考资料

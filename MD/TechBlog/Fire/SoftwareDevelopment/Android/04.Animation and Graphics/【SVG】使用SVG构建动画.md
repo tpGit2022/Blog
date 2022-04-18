@@ -53,7 +53,7 @@
 ```
 
 > drawable指定要进行动画操作的drawable对象，animation指要进行的动画，name指drawable中name为start的path。`android:animation="@animator/mul_start_anim"`,Android Studio不会自动提示需要自己手动不全，且animated-vector会标红提示。  
-> ![20170803113556.png](../../../../Pictures\20170803\20170803113556.png)  
+> ![20170803113556.png](../../../../Pictures/201708/20170803113556.png)  
 
 4. 在布局文件中引用draw_combine.xml.
 ```
