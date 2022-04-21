@@ -7,6 +7,10 @@
 timeout /t 5
 
 
+
+certutil -hashfile filenamme 查看文件的相关验证值
+
+
 https://gist.github.com/675816156/7bcec2bc6f45faa64acdb75acfef6912
 
 获取设备上相关 Mac 地址
