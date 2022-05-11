@@ -1,5 +1,8 @@
 [TOC]
 
+Termux 是运行在AndroidOS上的模拟Linux环境，目前主要还是为了在手机上运行Java和Python代码
+
+
 # 配置Java环境
 
 `pkg install openjdk17`
@@ -28,9 +31,16 @@ PC 通过scp获取手机端文件
 ![abs_2022_04_27_08_12_47_0910.bmp](E:/MyIT/Blog/MD/TechBlog/Pictures/202204/abs_2022_04_27_08_12_47_0910.bmp)  
 
 
+# PC多网络出口连接同一局域网手机
+
+
+
+
 # 参考资料
 
 1. [ssh可以登录，但是scp不行，解决方案](https://blog.csdn.net/beyond__devil/article/details/55512414?utm_source=blogxgwz2)
 2. [Termux 高级终端安装使用配置教程](https://www.sqlsec.com/2018/05/termux.html)
 3. [Termux官网](https://termux.com/)
 4. [Termux-Github地址](https://github.com/termux)
+5. [Use ssh with a specific network interface](https://unix.stackexchange.com/questions/16057/use-ssh-with-a-specific-network-interface)
+6. [Force SSH connection through a different interface](https://serverfault.com/questions/417035/force-ssh-connection-through-a-different-interface)
