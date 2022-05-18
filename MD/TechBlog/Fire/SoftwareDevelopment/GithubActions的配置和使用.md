@@ -38,9 +38,30 @@ jobs:
           username: ${{ secrets.EMAIL_139_USER_NAME }}
           password: ${{ secrets.EMAIL_139_USER_PWD }}
           subject: Github Actions job result
+          html_body: file://file_list.html
           body: github action send email test!!!!
           to: xxxxxxxx@qq.com
           from: GitHub Actions
+```
+
+`html_body` 的 value部分 file的起始点仓库根目录。
+
+> 注意 python xxx.py 和 python xxxx\xx.py 时生成文件的不同位置
+
+可以执行以下 Action来获取执行后的目录结果
+
+```
+	- name: '生成当前文件列表'
+      run: bash ./listdir.sh
+
+```
+
+`listdir.sh` 的内容如下:
+
+```shell
+#!/bin/sh
+
+ls -alR
 ```
 
 
@@ -63,11 +84,37 @@ Error: Message failed: 550 2f33627b5ecbec6-ffa92 Mail rejected
 上述错误说明发送邮件失败，SMTP 500 可能是SMTP服务的原因，实测中发现139信箱容易出现该错误，
 
 
-TODO
+***TODO***
 
 1. 挂载有道云笔记的每日签到
 2. 挂载v2ray账号的每日签到
 3. jd的签到
+
+
+# 邮件知识扩展
+
+
+常见的邮箱协议有 SMTP、POP3、IMAP等。乍一看，很难看出各自有什么作用。其实看一下全称就很容易了。
+
+1.Simple Mail Transfer Protocol（SMTP）
+
+2.Post Office Protocol 3（POP3）
+
+3.Internet Mail Access Protocol（IMAP）
+
+简单地说，SMTP管着发邮件，POP3/IMAP4管收邮件
+
+[常用邮箱的服务器(SMTP/POP3)地址和端口整理](https://blog.51cto.com/u_15300443/3091999)
+
+## 139
+
+| 服务器 | 地址 | 端口(不带SSL) | 端口(带SSL) |
+| :---:|:---:|:---:|:---:|
+| POP3服务器 | pop.139.com | 110 | 995 |
+| SMTP服务器 | smtp.139.com | 25 | 465 |
+| IMAP服务器 | imap.139.com | 143 | 993 |
+
+
 
 
 # 示例
@@ -117,6 +164,7 @@ jobs:
           from: ${{ secrets.EMAIL_SEND_NAME }}
 
 ```
+
 
 # 参考资料
 
