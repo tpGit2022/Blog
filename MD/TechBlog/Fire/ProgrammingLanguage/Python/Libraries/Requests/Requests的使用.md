@@ -24,6 +24,15 @@ proxies = {
 request_content = requests.get(url, proxies=proxies)
 ```
 
+* requests开启log日志
+
+```
+# 导入相关类
+from http.client import HTTPConnection
+# 打开日志开关
+HTTPConnection.debuglevel=1
+```
+
 # 参考资料
 1. [Requests的官方文档](http://www.python-requests.org/en/master/)
 2. [Requests开速上手](http://docs.python-requests.org/zh_CN/latest/user/quickstart.html)
