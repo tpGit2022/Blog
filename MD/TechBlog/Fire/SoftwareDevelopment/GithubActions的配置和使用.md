@@ -77,6 +77,62 @@ https://github.com/marketplace/actions/send-email
 
 
 
+# Environments and Secrets
+
+Github 为Secrets即机密文件(用户名，密码，token等)添加单独的加密，避免信息泄露。
+
+Secrets 可以分为 Environment secrets 和 Repository secrets。 添加方式见截图
+
+![abs_2022_06_02_11_33_48_0970.bmp](E:\MyIT\Blog\MD\TechBlog\Pictures/202206/abs_2022_06_02_11_33_48_0970.bmp)  
+
+对于 `Repository secrets` 来说可以使用 `${{ secrets.EMAIL_SMTP_PORT }` 来获取
+
+对于 `Environment secrets` 需要先使用 `environment` 进行申明，具体例子如下:
+
+```
+name: 测试
+
+on: 
+    push:
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    environment: EMAIL_CONFIG
+    steps:
+      - name: 'Checkout codes'
+        uses: actions/checkout@v3
+      
+      - name: '安装Python环境'
+        uses: 'actions/setup-python@v3'
+        with: 
+            python-version: 3.9
+        
+      - name: "配置依赖"
+        run: pip install -r requirements.txt
+        #run: pip install requests
+
+      - name: "获取北京时间"
+        run: bash ./00.LinuxShell/action_log.sh
+     
+      - name: "测试ENV SE"
+        env:
+            ENV_TEST: ${{ secrets.EMAIL_TEST_TEST }}
+            EMAIL_SMTP_DOMAIN: ${{ secrets.EMAIL_SMTP_DOMAIN }}
+            EMAIL_SMTP_PORT: ${{ secrets.EMAIL_SMTP_PORT }}
+            EMAIL_SMTP_REV: ${{ secrets.EMAIL_SMTP_REV }}
+            EMAIL_SMTP_USER_NAME: ${{ secrets.EMAIL_SMTP_USER_NAME }}
+            EMAIL_SMTP_USER_PWD: ${{ secrets.EMAIL_SMTP_USER_PWD }}
+            LT_INPUT_CODE: ${{ secrets.LT_INPUT_CODE }}
+        run: python3 ./01.Python/test.py
+```
+
+上述 `LT_INPUT_CODE` 是 `Repository secrets` 变量可直接引用
+而 `EMAIL_SMTP_DOMAIN` 是 环境变量 `EMAIL_CONFIG` 下的机密变量，若无 `environment: EMAIL_CONFIG` 声明将取不到该值。
+
+# FAQ
+
+
 ```
 Error: Message failed: 550 2f33627b5ecbec6-ffa92 Mail rejected
 ```
@@ -174,4 +230,5 @@ jobs:
 4. [GitHub Actions 入门教程](https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
 5. [Github-Action-定时任务](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#scheduled-events-schedule)
 6. [Github-Action-定时任务-CN](https://docs.github.com/cn/actions/using-workflows/events-that-trigger-workflows)
+7. [Github-Action-上下文](https://docs.github.com/cn/actions/learn-github-actions/contexts#secrets-context)
 
