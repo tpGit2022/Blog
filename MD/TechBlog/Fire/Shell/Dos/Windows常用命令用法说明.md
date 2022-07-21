@@ -99,6 +99,23 @@ if "%isUpdate%"=="1" goto :UpdateSVN
   `if [not] errorlevel number command`  
   `if [not] string1==string2 command`  
   `if [not] exist filename command`
+
+  `if` 和 `else` 搭配使用时 `else` 和 `)` 需要在同一行
+
+```
+@echo off
+
+if exist left_click.ahk (
+  echo 存在该文件
+) else (
+  echo 不存在该文件
+)
+pause
+```
+
+> 如果else另起了一行上述脚本将会报错
+
+
 5. for  
  `for`命令用于循环，用的地方很多，用处极大。常用于从文件列表读取参数，分割字符串，循环执行命令等等。
 

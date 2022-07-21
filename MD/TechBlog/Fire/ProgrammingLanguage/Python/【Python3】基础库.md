@@ -1,6 +1,18 @@
 [TOC]
 
 
+# 格式化输出
+
+```
+def print_info():
+    index = 20
+    while index < 1200:
+        out_print_info = "name:{:d}\ttest:0x{:X}".format(index, index)
+        print(out_print_info)
+        print(f"name:{index}")
+        index = index + 1
+```
+
 # 时间
 
 
